@@ -1,21 +1,3 @@
-// const mongoose = require("mongoose")
-
-// mongoose.connect("mongodb://localhost:27017/studentdeta")
-
-// const studentSchema = mongoose.Schema({
-//      name: String,
-//      email: String,
-//      class: String,
-//      image: String
-// })
-
-
-// module.exports = mongoose.model("student", studentSchema)
-
-
-
-
-
 
 const mongoose = require("mongoose");
 require("dotenv").config();  // .env file read karega
