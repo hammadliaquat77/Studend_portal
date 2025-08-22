@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Students</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+  <div class="h-full w-full p-10 ">
+     <a href="/" class="px-4 py-3 text-white bg-zinc-600 rounded-lg">Back</a>
+    
+    <h2 class="text-3xl font-bold text-center text-green-600 mb-6">All Students</h2>
+
+    <table class="table-auto w-full bg-white shadow-lg rounded-lg overflow-hidden">
+      <thead>
+        <tr class="bg-gray-200 text-left">
+          <th class="px-4 py-3">Image</th>
+          <th class="px-4 py-3">Name</th>
+          <th class="px-4 py-3">Email</th>
+          <th class="px-4 py-3">Class</th>
+          <th class="px-4 py-3">Actions</th>
+        </tr>
+      </thead>
+      <% Users.forEach((user)=> {%>
+        <tbody>
+          <tr class="border-b">
+           <td class="px-4 py-3">
+             <img src="/uploads/<%= user.image %>" alt="Student" class="w-12 h-12 rounded-full object-cover">
+            </td> 
+            <td class="px-4 py-3"><%= user.name%></td>
+            <td class="px-4 py-3"><%= user.email%></td>
+            <td class="px-4 py-3"><%= user.class%></td>
+            <td class="px-4 py-3 space-x-3">
+              <a href="/edit/<%= user._id%>" class="bg-yellow-400 px-4 py-2 rounded-lg text-white hover:bg-yellow-500">Edit</a>
+              <a href="/delete/<%= user._id%>" class="bg-red-500 px-4 py-2 rounded-lg text-white hover:bg-red-600">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+        <%})%>
+        
+      </table>
+    </div>
+</body>
+</html>
